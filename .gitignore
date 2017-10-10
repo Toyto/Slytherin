@@ -1,0 +1,11 @@
+__pycache__/
+*.py[cod]
+*$py.class
+eggs/
+.eggs/
+*.egg
+*.log
+.static_storage/
+.media/
+local_settings.py
+.DS_Store
