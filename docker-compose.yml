@@ -1,0 +1,21 @@
+version: '2.0'
+services:
+  db:
+    image: postgres
+    environment:
+      # Used to create the DB when starting initially
+      POSTGRES_DB: 'chatdb'
+      POSTGRES_USER: 'andrew'
+      # Used by psql
+      PGUSER: 'andrew'
+      PGHOST: 'localhost'
+      PGDATASE: 'chatdb'
+  web:
+    build: .
+    command: python3 manage.py runserver 0.0.0.0:8000
+    ports:
+      - "8000:8000"
+    restart: on-failure
+    depends_on:
+      - db
+

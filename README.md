@@ -1,5 +1,10 @@
-My Project
-Not only your project
-Pasha Mospan has also contributed. I am proud of my work and defy any other to prove it wrong!
-Pasha is Ryan
-Lavrov did this change
+* Getting Started *
+pull project
+install docker and docker-compose https://docs.docker.com/engine/installation/
+
+Run
+`docker-compose up`
+
+Visit localhost:8000
+
+Now you're ready to go!

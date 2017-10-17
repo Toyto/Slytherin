@@ -58,9 +58,11 @@ WSGI_APPLICATION = 'chamberofs.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'chatdb',
-        'HOST': 'localhost'
+        'USER': 'andrew',
+        'HOST': 'db',
+        'PORT': 5432,
     }
 }
 
