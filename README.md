@@ -1,4 +1,4 @@
-* Getting Started *
+# Getting Started 
 pull project
 install docker and docker-compose https://docs.docker.com/engine/installation/
 
