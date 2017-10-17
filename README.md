@@ -1,9 +1,12 @@
 # Getting Started 
-pull project
+
+pull/clone repository
+
 install docker and docker-compose https://docs.docker.com/engine/installation/
 
-Run
+Run 
 `docker-compose up`
+inside the Slytherin directory
 
 Visit localhost:8000
 
