@@ -2,6 +2,8 @@ version: '2.0'
 services:
   db:
     image: postgres
+    ports:
+      - "5432:5432"
     environment:
       # Used to create the DB when starting initially
       POSTGRES_DB: 'chatdb'
@@ -10,6 +12,7 @@ services:
       PGUSER: 'andrew'
       PGHOST: 'localhost'
       PGDATASE: 'chatdb'
+
   web:
     build: .
     command: python3 manage.py runserver 0.0.0.0:8000
@@ -18,4 +21,11 @@ services:
     restart: on-failure
     depends_on:
       - db
+
+  client:
+    build: ./reactapp
+    command: webpack-dev-server --host 0.0.0.0 --port 8080
+    ports:
+      - "8080:8080"
+    restart: on-failure
 

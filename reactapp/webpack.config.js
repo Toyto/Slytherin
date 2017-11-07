@@ -5,7 +5,8 @@ var HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
     inject: 'body'
 });
 module.exports = {
-    entry: __dirname + "/app/index.jsx",
+    entry: ['webpack-dev-server/client?http://0.0.0.0:8080',
+           __dirname + "/app/index.jsx"],
     output: {
         path: __dirname + '/build',
         filename: "bundle.js"
@@ -20,3 +21,4 @@ module.exports = {
         extensions: ['.js', '.jsx'],
   }
 };
+
