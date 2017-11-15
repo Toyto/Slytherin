@@ -1,5 +1,5 @@
 #!/bin/sh
 
 echo "Yo, man"
-set VERSION="$(git tag)"
+export VERSION="$(git describe --tags)"
 echo "Version="$VERSION
