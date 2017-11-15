@@ -18,7 +18,9 @@ services:
     command: python3 manage.py runserver 0.0.0.0:8000
     ports:
       - "8000:8000"
-    restart: on-failure
+    volumes:
+      - .:/Slitherin/
+    restart: always
     depends_on:
       - db
 
@@ -27,5 +29,7 @@ services:
     command: webpack-dev-server --host 0.0.0.0 --port 8080
     ports:
       - "8080:8080"
-    restart: on-failure
+    volumes:
+      - .:/Slitherin/
+    restart: always
 

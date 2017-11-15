@@ -36,7 +36,8 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'channels'
+    'channels',
+    'core',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -67,6 +68,7 @@ DATABASES = {
     }
 }
 
+DEFAULT_INDEX_TABLESPACE = ''
 # Internationalization
 # https://docs.djangoproject.com/en/1.7/topics/i18n/
 
