@@ -5,4 +5,4 @@ start:
 	npm --prefix /Users/andrew/MyProjects/Slitherin/reactapp run start
 
 test:
-	chamberofs/manage.py test core/tests
+	chamberofs/manage.py test chamberofs/core/tests
