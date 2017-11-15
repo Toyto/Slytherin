@@ -4,3 +4,5 @@ python:
     - nightly
 script:
     - make test
+env:
+  - DB_HOST=localhost

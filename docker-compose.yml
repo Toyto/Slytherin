@@ -7,9 +7,9 @@ services:
     environment:
       # Used to create the DB when starting initially
       POSTGRES_DB: 'chatdb'
-      POSTGRES_USER: 'andrew'
+      POSTGRES_USER: 'postgres'
       # Used by psql
-      PGUSER: 'andrew'
+      PGUSER: 'postgres'
       PGHOST: 'localhost'
       PGDATASE: 'chatdb'
 
