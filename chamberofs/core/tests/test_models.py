@@ -16,4 +16,4 @@ class TestMessage(TestCase):
 
     def test_creation(self):
         message = Message.objects.create(sender=self.user, text='Hello Everybody!')
-        self.assertContains(message.text, 'Hello')
+        self.assertEqual(message.text, 'Hello Everybody!')
