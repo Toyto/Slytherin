@@ -7,9 +7,9 @@ services:
     environment:
       # Used to create the DB when starting initially
       POSTGRES_DB: 'chatdb'
-      POSTGRES_USER: 'andrew'
+      POSTGRES_USER: 'postgres'
       # Used by psql
-      PGUSER: 'andrew'
+      PGUSER: 'postgres'
       PGHOST: 'localhost'
       PGDATASE: 'chatdb'
 
@@ -19,7 +19,7 @@ services:
     ports:
       - "8000:8000"
     volumes:
-      - .:/Slitherin/
+      - ./chamberofs:/code/
     restart: always
     depends_on:
       - db
@@ -30,6 +30,6 @@ services:
     ports:
       - "8080:8080"
     volumes:
-      - .:/Slitherin/
+      - ./reactapp:/reactapp
     restart: always
 
