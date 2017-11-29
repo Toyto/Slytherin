@@ -16,4 +16,4 @@ class TestServices(TestCase):
 
         self.assertEqual(coord.get_coordinates(), ('12.123', '13.123'))
         coord.set_coordinates('234.234', '667.545')
-        self.assertEqual(coord.get_coordinates(), ('234.234', '667.545'))
+        self.assertEqual(coord.get_coordinates(), ('LUL', '667.545'))
