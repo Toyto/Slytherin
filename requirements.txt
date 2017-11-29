@@ -3,3 +3,5 @@ pytz==2017.2
 psycopg2==2.7.3.1
 channels
 flake8
+django-redis
+redis

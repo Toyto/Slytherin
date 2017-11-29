@@ -33,3 +33,7 @@ services:
       - ./reactapp:/reactapp
     restart: always
 
+  redis:
+    image: "redis:alpine"
+    ports:
+      - 6379:6379
