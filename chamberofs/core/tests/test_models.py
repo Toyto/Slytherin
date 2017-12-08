@@ -21,3 +21,11 @@ class TestMessage(TestCase):
             sender=self.user, text='Hello Everybody!'
         )
         self.assertEqual(message.text, 'Hello Everybody!')
+
+    def test_deletion(self):
+        message = Message.objects.create(
+            sender=self.user, text='Hello Everybody!'
+        )
+        self.assertEqual(message.text, 'Hello Everybody!')
+        message.delete()
+        self.assertEqual(Message.objects.count(), 0)
