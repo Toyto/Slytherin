@@ -8,6 +8,12 @@ class TestUser(TestCase):
         User.objects.create(username='Andrew', email='me@gmail.com')
         self.assertEqual(User.objects.count(), 1)
 
+    def test_deletion(self):
+        User.objects.create(username='Andrew', email='me@gmail.com')
+        self.assertEqual(User.objects.count(), 1)
+        User.objects.delete()
+        self.assertEqual(User.objects.count(), 0)
+
 
 class TestMessage(TestCase):
 
