@@ -9,6 +9,7 @@ COPY package.json .
 # COPY package.json package-lock.json ./
 
 RUN npm install
+RUN npm install webpack -g
 RUN npm install webpack-dev-server -g
 EXPOSE 8080
 # If you are building your code for production
