@@ -19,7 +19,6 @@ class App extends React.Component {
 
     axios.get('http://localhost:8000/messages/')
     .then(function (response) {
-      console.log(response);
       var messages = response.data.messages;
       that.setState({ messages: messages });
     })
@@ -58,10 +57,11 @@ class App extends React.Component {
     }));
 
     this.ws.onmessage = function(e) {
-      messages.push({text: e.data, user: that.props.username});
+      var data = JSON.parse(e.data);
+      messages.push({text: data.text, user: data.user});
       that.setState({ messages: messages });
+      console.log(that.state.messages);
     }
-
     this.setState({ message: '' });
   }
 

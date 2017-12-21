@@ -10,7 +10,7 @@ def ws_message(message):
     user = ChatUser.objects.get(username=message_data['username'])
     message_obj = Message.objects.create(sender=user, text=message_data['text'])
     Group('cozy_chat').send({
-        "text": message_obj.text,
+        "text": json.dumps({'text': message_obj.text, 'user': user.username}),
     })
 
 
