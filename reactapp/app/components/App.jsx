@@ -63,12 +63,16 @@ class App extends React.Component {
     this.setState({ message: '' });
   }
 
+  _onMouseMove(e) {
+    this.fetchHistory();
+  }
+
   render() {
     const all_messages = this.state.messages.map((m) =>
       <Message key={Math.random()} user={m.user} text={m.text} />
     );
     return (
-      <div>
+      <div onMouseMove={this._onMouseMove.bind(this)}>
         { all_messages }
         <form>
           <input type="text" name="message" placeholder="Dummy message" value={this.state.message} onChange={this.handleMessageChange} />
