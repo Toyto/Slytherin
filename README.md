@@ -4,11 +4,14 @@ pull/clone repository
 
 install docker and docker-compose https://docs.docker.com/engine/installation/
 
-Run 
-`docker-compose up`
+Run
+1. `docker-compose build`
+
+2. `docker-compose up`
 inside the Slytherin directory
+
 Then run 
-`docker-compose exec web ./manage.py migrate`
+3. `docker-compose exec web ./manage.py migrate`
 
 Visit localhost:8080
 
