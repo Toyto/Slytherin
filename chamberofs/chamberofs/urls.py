@@ -7,4 +7,5 @@ urlpatterns = [
     # url(r'^$', 'chamberofs.views.home', name='home'),
     url(r'^admin/', include(admin.site.urls)),
     url(r'^create_new_user/$', views.create_new_user, name='create_new_user'),
+    url(r'^messages/$', views.messages, name='messages'),
 ]

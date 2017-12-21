@@ -25,13 +25,15 @@ class Login extends React.Component {
   }
 
   handleSubmit() {
+    var that = this;
+
     axios.post('http://localhost:8000/create_new_user/', {
         name: this.state.name,
         email: this.state.email
     })
     .then(function (response) {
-      if (response.success){
-          this.setState({login_done: !this.state.login_done});
+      if (response.data.success){
+          that.setState({login_done: !that.state.login_done});
       }
     })
     .catch(function (error) {
@@ -51,7 +53,7 @@ class Login extends React.Component {
     )}
     else {
       return (
-        <App />
+        <App username={this.state.name} />
       )
     }
   }
