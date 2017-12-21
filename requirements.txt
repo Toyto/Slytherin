@@ -5,3 +5,4 @@ channels
 flake8
 django-redis
 redis
+fabric
