@@ -1,14 +1,14 @@
 from django.contrib import admin
-from core.models import User, Message
+from core.models import ChatUser, Message
 
 
-class UserAdmin(admin.ModelAdmin):
-    list_diplay = ['name', 'email']
+class ChatUserAdmin(admin.ModelAdmin):
+    list_diplay = ['username', 'email']
 
 
 class MessageAdmin(admin.ModelAdmin):
     list_diplay = ['text', 'sender']
 
 
-admin.site.register(User, UserAdmin)
+admin.site.register(ChatUser, ChatUserAdmin)
 admin.site.register(Message, MessageAdmin)

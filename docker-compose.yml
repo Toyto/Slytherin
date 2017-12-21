@@ -6,12 +6,12 @@ services:
       - "5432:5432"
     environment:
       # Used to create the DB when starting initially
-      POSTGRES_DB: 'chatdb'
+      POSTGRES_DB: 'newchat'
       POSTGRES_USER: 'postgres'
       # Used by psql
       PGUSER: 'postgres'
       PGHOST: 'localhost'
-      PGDATASE: 'chatdb'
+      PGDATASE: 'newchat'
 
   web:
     build: .

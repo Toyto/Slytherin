@@ -17,6 +17,7 @@ module.exports = {
         ]
     },
     plugins: [HtmlWebpackPluginConfig],
+    externals: ['axios'],
     resolve: {
         extensions: ['.js', '.jsx'],
   }
