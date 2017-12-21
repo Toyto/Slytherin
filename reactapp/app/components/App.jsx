@@ -47,7 +47,8 @@ class App extends React.Component {
     this.setState({ message: e.target.value });
   }
 
-  handleSubmit() {
+  handleSubmit(e) {
+    e.preventDefault();
     var that = this;
     var messages = this.state.messages;
 
@@ -71,9 +72,9 @@ class App extends React.Component {
     return (
       <div>
         { all_messages }
-        <form>
+        <form onSubmit={this.handleSubmit}>
           <input type="text" name="message" placeholder="Dummy message" value={this.state.message} onChange={this.handleMessageChange} />
-          <button type="button" onClick={this.handleSubmit}>Send!</button>
+          <button type="submit">Send!</button>
         </form>
       </div>
     )

@@ -24,7 +24,8 @@ class Login extends React.Component {
     this.setState({ email: e.target.value });
   }
 
-  handleSubmit() {
+  handleSubmit(e) {
+    e.preventDefault();
     var that = this;
 
     axios.post('http://localhost:8000/create_new_user/', {
@@ -45,10 +46,10 @@ class Login extends React.Component {
   render() {
     if (!this.state.login_done){
       return (
-        <form>
+        <form onSubmit={this.handleSubmit}>
           <input type="text" name="email" placeholder="Your Email" value={this.state.email} onChange={this.handleEmailChange} />
           <input type="text" name="name" placeholder="Your Name" value={this.state.name} onChange={this.handleNameChange} />
-          <button type="button" onClick={this.handleSubmit}>Login me!</button>
+          <button type="submit">Login me!</button>
         </form>
     )}
     else {
