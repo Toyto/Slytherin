@@ -32,8 +32,9 @@ class App extends React.Component {
     var that = this;
 
     this.ws = new WebSocket('ws://localhost:8000');
+    this.ws.onopen = e => console.log('Socket Opened');
     this.ws.onerror = e => this.setState({ error: 'WebSocket error' });
-    this.ws.onclose = e => !e.wasClean && this.setState({ error: `WebSocket error: ${e.code} ${e.reason}` });
+    this.ws.onclose = e => !e.wasClean && console.log({ error: `WebSocket error: ${e.code} ${e.reason}` });
 
     this.fetchHistory();
   }
@@ -55,7 +56,7 @@ class App extends React.Component {
       username: this.props.username
     }));
 
-    this.ws.onmessage = function(e) { 
+    this.ws.onmessage = function(e) {
       messages.push({text: e.data, user: that.props.username});
       that.setState({ messages: messages });
     }
@@ -63,16 +64,12 @@ class App extends React.Component {
     this.setState({ message: '' });
   }
 
-  _onMouseMove(e) {
-    this.fetchHistory();
-  }
-
   render() {
     const all_messages = this.state.messages.map((m) =>
       <Message key={Math.random()} user={m.user} text={m.text} />
     );
     return (
-      <div onMouseMove={this._onMouseMove.bind(this)}>
+      <div>
         { all_messages }
         <form>
           <input type="text" name="message" placeholder="Dummy message" value={this.state.message} onChange={this.handleMessageChange} />
