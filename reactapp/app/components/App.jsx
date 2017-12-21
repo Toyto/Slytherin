@@ -70,13 +70,22 @@ class App extends React.Component {
       <Message key={Math.random()} user={m.user} text={m.text} />
     );
     return (
-      <div>
-        { all_messages }
-        <form onSubmit={this.handleSubmit}>
-          <input type="text" name="message" placeholder="Dummy message" value={this.state.message} onChange={this.handleMessageChange} />
-          <button type="submit">Send!</button>
-        </form>
-      </div>
+        <div>
+          <div className="messagesBox">
+            { all_messages }
+          </div>
+          <form onSubmit={this.handleSubmit} className="form-style-7">
+            <ul> 
+              <li>
+                <label for="message">Message</label>
+                <input type="text" name="message" placeholder="Dummy message" value={this.state.message} onChange={this.handleMessageChange} />
+              </li>
+              <li>
+                <button type="submit">Send!</button>
+              </li>
+            </ul>
+          </form>
+        </div>
     )
   }
 }

@@ -46,10 +46,20 @@ class Login extends React.Component {
   render() {
     if (!this.state.login_done){
       return (
-        <form onSubmit={this.handleSubmit}>
-          <input type="text" name="email" placeholder="Your Email" value={this.state.email} onChange={this.handleEmailChange} />
-          <input type="text" name="name" placeholder="Your Name" value={this.state.name} onChange={this.handleNameChange} />
-          <button type="submit">Login me!</button>
+        <form onSubmit={this.handleSubmit} className="form-style-7">
+          <ul>
+            <li>
+              <label for="email">Name</label>
+              <input type="text" name="email" placeholder="Your Email" value={this.state.email} onChange={this.handleEmailChange} />
+            </li>
+            <li>
+              <label for="name">Name</label>
+              <input type="text" name="name" placeholder="Your Name" value={this.state.name} onChange={this.handleNameChange} />
+            </li>
+            <li>
+              <button type="submit">Login me!</button>
+            </li>
+          </ul>
         </form>
     )}
     else {
