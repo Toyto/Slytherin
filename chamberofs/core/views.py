@@ -7,7 +7,9 @@ from .models import ChatUser, Message
 @csrf_exempt
 def create_new_user(request):
     user_data = json.loads(request.body)
-    ChatUser.objects.create(username=user_data.get('name'), email=user_data.get('email'))
+    ChatUser.objects.create(
+        username=user_data.get('name'), email=user_data.get('email')
+    )
     return JsonResponse({'success': True})
 
 

@@ -12,4 +12,3 @@ class ChatUser(models.Model):
 class Message(models.Model):
     text = models.TextField(blank=False)
     sender = models.ForeignKey(ChatUser)
-

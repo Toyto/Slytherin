@@ -8,7 +8,9 @@ def ws_message(message):
     # both have a "text" key for their textual data.
     message_data = json.loads(message.content['text'])
     user = ChatUser.objects.get(username=message_data['username'])
-    message_obj = Message.objects.create(sender=user, text=message_data['text'])
+    message_obj = Message.objects.create(
+        sender=user, text=message_data['text']
+    )
     Group('cozy_chat').send({
         "text": json.dumps({'text': message_obj.text, 'user': user.username}),
     })
