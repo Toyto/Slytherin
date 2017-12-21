@@ -10,7 +10,6 @@ Run
 2. `docker-compose up`
 inside the Slytherin directory
 
-Then run 
 3. `docker-compose exec web ./manage.py migrate`
 
 Visit localhost:8080
