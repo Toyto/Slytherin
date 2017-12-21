@@ -77,7 +77,7 @@ class App extends React.Component {
           <form onSubmit={this.handleSubmit} className="form-style-7">
             <ul> 
               <li>
-                <label for="message">Message</label>
+                <label htmlFor="message">Message</label>
                 <input type="text" name="message" placeholder="Dummy message" value={this.state.message} onChange={this.handleMessageChange} />
               </li>
               <li>

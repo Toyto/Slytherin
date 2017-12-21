@@ -49,11 +49,11 @@ class Login extends React.Component {
         <form onSubmit={this.handleSubmit} className="form-style-7">
           <ul>
             <li>
-              <label for="email">Name</label>
+              <label htmlFor="email">Name</label>
               <input type="text" name="email" placeholder="Your Email" value={this.state.email} onChange={this.handleEmailChange} />
             </li>
             <li>
-              <label for="name">Name</label>
+              <label htmlFor="name">Name</label>
               <input type="text" name="name" placeholder="Your Name" value={this.state.name} onChange={this.handleNameChange} />
             </li>
             <li>
