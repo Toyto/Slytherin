@@ -6,3 +6,4 @@ flake8
 django-redis
 redis
 fabric
+django-cors-headers
