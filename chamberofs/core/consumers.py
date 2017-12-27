@@ -17,6 +17,7 @@ def ws_message(message):
         "text": json.dumps({'text': message_obj.text, 'user': user.username}),
     })
 
+
 @retry(wait_exponential_multiplier=1000, wait_exponential_max=10000)
 def ws_connect(message):
     Group('cozy_chat').add(message.reply_channel)
